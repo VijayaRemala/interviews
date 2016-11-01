@@ -18,7 +18,7 @@ public class Exercise3 {
 		Person p1 = new Person(1);
 		people.add(p1);
 		people.add(p1);
-		
+		/** As of now we can get the only one objecthere but if we need to two then we need to remove the hashcode and equals   */
 		System.out.println(people.size());
 		
 	}
@@ -32,10 +32,12 @@ public class Exercise3 {
 			id = newId;
 		}
 		
+		@Override
 		public int hashCode() {
 			return id * generator.nextInt();
 		}
 		
+		@Override
 		public boolean equals(Object other) {
 			return id.equals(((Person)other).id);
 		}
